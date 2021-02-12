@@ -17,7 +17,9 @@ You need Docker. We recommend shutting down other programs on your machine befor
 
 Running Lighthouse via DevTools has some problems. First, test runs can be affected by varying browser settings, extensions, etc. Second, running multiple tests (to eventually take the median or average) and recording the results can be tedious, especially when comparing two or more URLs. Third, calculating a mean or median has to be done manually (and as you can see [here](https://github.com/GoogleChrome/lighthouse/blob/c6e14d7c8629c17284c1f773dd6bc8bc61221a47/lighthouse-core/lib/median-run.js#L38-L47), it's not all that straightforward!).
 
-This script aims to simplify things. Feed in two URLs and a desired number of runs, and you'll get a folder full of detailed Lighthouse results, plus a marker denoting each URL's median run. Lighthouse CLI runs the tests, meaning user-specific browser settings won't affect the results.
+This script aims to simplify things. Give it two URLs and the desired number of runs, and you'll get a folder full of JSON and HTML Lighthouse results, plus a file-name marker denoting the median run for each URL. Lighthouse CLI runs the tests, meaning user-specific browser settings won't affect the results.
+
+We recommend at least three runs, and ideally an odd number so we can get a true median.
 
 (Note: This repo does not account for all possible test variances. Read [this doc](https://github.com/GoogleChrome/lighthouse/blob/master/docs/variability.md) for more on that topic.)
 
